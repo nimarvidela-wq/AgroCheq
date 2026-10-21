@@ -300,14 +300,42 @@ document.addEventListener("DOMContentLoaded", function() {
         if (boton.textContent.includes("Exportar")) boton.addEventListener("click", () => alert("Generando archivo descargable... (Simulación)"));
     });
 
-    const formConfig = document.querySelector(".formulario-caja form");
-    if (formConfig) {
-        formConfig.addEventListener("submit", function(e) {
+   // --- 6. LÓGICA DE MI CUENTA (Perfil) ---
+    const formPerfil = document.getElementById("form-perfil");
+    if (formPerfil) {
+        // Cargar datos al abrir la página (o poner valores por defecto si es la primera vez)
+        const perfilGuardado = JSON.parse(localStorage.getItem("agrocheq_perfil")) || {
+            nombre: "Usuario de Prueba",
+            correo: "usuario@agrocheq.com",
+            empresa: "AgroGanadera S.A."
+        };
+        
+        document.getElementById("perfil-nombre").value = perfilGuardado.nombre;
+        document.getElementById("perfil-correo").value = perfilGuardado.correo;
+        document.getElementById("perfil-empresa").value = perfilGuardado.empresa;
+
+        // Guardar nuevos datos ingresados
+        formPerfil.addEventListener("submit", function(e) {
             e.preventDefault();
             const btnGuardar = this.querySelector('button[type="submit"]');
             const textoOriginal = btnGuardar.textContent;
-            btnGuardar.textContent = "Guardando..."; btnGuardar.style.backgroundColor = "#059669";
-            setTimeout(() => { alert("Tus preferencias han sido actualizadas."); btnGuardar.textContent = textoOriginal; btnGuardar.style.backgroundColor = ""; }, 800);
+
+            const nuevoPerfil = {
+                nombre: document.getElementById("perfil-nombre").value,
+                correo: document.getElementById("perfil-correo").value,
+                empresa: document.getElementById("perfil-empresa").value
+            };
+            
+            localStorage.setItem("agrocheq_perfil", JSON.stringify(nuevoPerfil));
+
+            btnGuardar.textContent = "Guardando..."; 
+            btnGuardar.style.backgroundColor = "#059669"; // Color verde de éxito
+            
+            setTimeout(() => { 
+                alert("¡Tu cuenta ha sido actualizada exitosamente!"); 
+                btnGuardar.textContent = textoOriginal; 
+                btnGuardar.style.backgroundColor = ""; 
+            }, 800);
         });
     }
 
