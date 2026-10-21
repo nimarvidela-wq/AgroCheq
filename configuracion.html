@@ -23,43 +23,27 @@
         <main class="contenido-principal">
             <header>
                 <div>
-                    <h2>Configuración</h2>
-                    <p style="color: #64748b; margin-top: 5px;">Personalizá la cuenta y las preferencias de AgroCheq</p>
+                    <h2 class="titulo-mono">Mi Cuenta</h2>
+                    <p style="color: var(--texto-secundario); margin-top: 5px;">Administrá tus datos personales y de tu empresa</p>
                 </div>
             </header>
 
-            <section class="formulario-caja">
-                <h3 style="border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">Perfil y empresa</h3>
-                
-                <form action="#" method="POST" class="form-grid">
-                    <div class="grupo-input">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" value="Mariano" required>
+            <section style="background: white; padding: 2rem; border-radius: 8px; border: 1px solid var(--borde-suave); max-width: 600px;">
+                <h3 style="margin-bottom: 1.5rem; color: var(--texto-principal); border-bottom: 1px solid var(--borde-suave); padding-bottom: 0.5rem;">Datos del Perfil</h3>
+                <form id="form-perfil">
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: bold; color: var(--texto-secundario);">NOMBRE COMPLETO</label>
+                        <input type="text" id="perfil-nombre" style="width: 100%; padding: 0.8rem; border: 1px solid var(--borde-suave); border-radius: 4px;" required>
                     </div>
-                    
-                    <div class="grupo-input">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" value="Gómez" required>
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: bold; color: var(--texto-secundario);">CORREO ELECTRÓNICO</label>
+                        <input type="email" id="perfil-correo" style="width: 100%; padding: 0.8rem; border: 1px solid var(--borde-suave); border-radius: 4px;" required>
                     </div>
-
-                    <div class="grupo-input completo">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" value="mariano@agrocheq.com.ar" required>
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: bold; color: var(--texto-secundario);">NOMBRE DE LA EMPRESA</label>
+                        <input type="text" id="perfil-empresa" style="width: 100%; padding: 0.8rem; border: 1px solid var(--borde-suave); border-radius: 4px;" required>
                     </div>
-
-                    <div class="grupo-input">
-                        <label for="razon_social">Razón Social</label>
-                        <input type="text" id="razon_social" value="Estancia La Verde S.A.">
-                    </div>
-
-                    <div class="grupo-input">
-                        <label for="cuit">CUIT</label>
-                        <input type="text" id="cuit" value="30-71652398-4">
-                    </div>
-
-                    <div class="grupo-input completo" style="align-items: flex-end;">
-                        <button type="submit" class="btn-primario">💾 Guardar cambios</button>
-                    </div>
+                    <button type="submit" class="btn-primario" style="width: 100%;">Guardar Cambios</button>
                 </form>
             </section>
         </main>
