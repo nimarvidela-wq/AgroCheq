@@ -441,3 +441,83 @@ input:focus { border-color: var(--bg-sidebar-activo); }
     grid-column: 1 / -1 !important;
     width: 100%;
 }
+
+/* =========================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Cambiar la estructura principal (el menú pasa arriba) */
+    .contenedor-app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 2. Menú lateral pasa a ser una barra superior deslizable */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        position: relative;
+        overflow-x: auto; /* Permite deslizar con el dedo */
+        white-space: nowrap;
+        border-right: none;
+        border-bottom: 1px solid var(--borde-suave);
+    }
+    
+    .sidebar ul {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* 3. Ajustar el área de contenido para que ocupe todo */
+    .contenido-principal {
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    /* 4. Tarjetas de resumen pasan a 2 columnas */
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    /* 5. Tablas adaptables (Scroll horizontal táctil) */
+    .contenedor-tabla {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: block; 
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* 6. Modales ocupan casi toda la pantalla */
+    .modal-contenido {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+    
+    /* 7. Botones y filtros se apilan para tocar mejor */
+    .filtros, .filtros-dropdowns {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .filtros input, .btn-primario, .btn-secundario {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Para celulares muy chicos (pantallas finitas) */
+@media screen and (max-width: 480px) {
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr; /* Tarjetas de a 1 por fila */
+    }
+}
