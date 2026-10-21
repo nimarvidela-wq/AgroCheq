@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - AgroCheq</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="contenedor-app">
+        <nav class="sidebar">
+            <h1>🌱 AgroCheq</h1>
+            <ul>
+                <li><a href="index.html"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Inicio</a></li>
+                <li><a href="cheques.html"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 8 9"></polyline></svg>Cheques</a></li>
+                <li><a href="proveedores.html"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Proveedores</a></li>
+                <li><a href="alertas.html"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Alertas</a></li>
+                <li><a href="reportes.html"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>Reportes</a></li>
+                <li><a href="configuracion.html" class="activo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Configuración</a></li>
+            </ul>
+        </nav>
+
+        <main class="contenido-principal">
+            <header>
+                <div>
+                    <h2>Configuración</h2>
+                    <p style="color: #64748b; margin-top: 5px;">Personalizá la cuenta y las preferencias de AgroCheq</p>
+                </div>
+            </header>
+
+            <section class="formulario-caja">
+                <h3 style="border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">Perfil y empresa</h3>
+                
+                <form action="#" method="POST" class="form-grid">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" value="Mariano" required>
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" value="Gómez" required>
+                    </div>
+
+                    <div class="grupo-input completo">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" value="mariano@agrocheq.com.ar" required>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="razon_social">Razón Social</label>
+                        <input type="text" id="razon_social" value="Estancia La Verde S.A.">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="cuit">CUIT</label>
+                        <input type="text" id="cuit" value="30-71652398-4">
+                    </div>
+
+                    <div class="grupo-input completo" style="align-items: flex-end;">
+                        <button type="submit" class="btn-primario">💾 Guardar cambios</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,443 @@
+/* --- VARIABLES EXACTAS DE TU FIGMA --- */
+:root {
+    /* Colores base */
+    --bg-app: #ffffff;
+    --bg-sidebar: #1b4332; /* El verde oscuro característico de tu panel */
+    --bg-sidebar-activo: #2d6a4f; /* Verde más claro para el menú seleccionado */
+    --borde-suave: #e2e8f0;
+    
+    /* Textos */
+    --texto-principal: #0f172a;
+    --texto-secundario: #64748b;
+    --texto-sidebar: #e2e8f0;
+    --naranja-logo: #f97316;
+    
+    /* Colores de las tarjetas (Extraídos de la imagen) */
+    --color-rojo: #ef4444;
+    --color-naranja: #f97316;
+    --color-verde-acento: #10b981;
+    --color-azul: #3b82f6;
+
+    /* Estructura */
+    --radio-borde: 8px;
+    --transicion: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-app);
+    color: var(--texto-principal);
+}
+
+/* --- TIPOGRAFÍA DE TÍTULOS (ESTILO FIGMA) --- */
+/* En tu diseño, "Bienvenido!" y "Cheques Recientes" tienen tipografía monoespaciada */
+h2, h3.titulo-mono {
+    font-family: 'Consolas', 'Courier New', monospace;
+    letter-spacing: -0.5px;
+    color: var(--texto-principal);
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.contenedor-app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL (CLON EXACTO) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    padding: 1.5rem 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo "AgroCheq" */
+.sidebar h1 {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar h1 span { color: var(--naranja-logo); } /* La palabra "Cheq" en naranja */
+
+/* Menú */
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: var(--texto-sidebar);
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radio-borde);
+    
+    /* Agregamos flexbox para alinear el ícono con el texto */
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    
+    transition: var(--transicion);
+}
+
+/* Estilo estándar para todos los íconos SVG del menú */
+.sidebar a svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar a.activo {
+    background-color: var(--bg-sidebar-activo);
+    color: white;
+    font-weight: 500;
+}
+
+/* Versión en la esquina inferior (v1.0.0) */
+.version-app {
+    margin-top: auto;
+    font-family: monospace;
+    color: #6b7280;
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.contenido-principal {
+    flex: 1;
+    padding: 2.5rem 3rem;
+}
+
+header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* --- TARJETAS DE RESUMEN (BORDES DE COLORES) --- */
+.contenedor-tarjetas {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tarjeta-resumen {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--borde-suave);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.tarjeta-resumen h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.tarjeta-resumen p {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Colores idénticos a las capturas */
+.borde-rojo { border-color: var(--color-rojo); }
+.borde-rojo h3, .borde-rojo p { color: var(--color-rojo); }
+
+.borde-naranja { border-color: var(--color-naranja); }
+.borde-naranja h3, .borde-naranja p { color: var(--color-naranja); }
+
+.borde-verde { border-color: var(--color-verde-acento); }
+.borde-verde h3, .borde-verde p { color: var(--color-verde-acento); }
+
+.borde-azul { border-color: var(--color-azul); }
+.borde-azul h3, .borde-azul p { color: var(--color-azul); }
+
+/* --- TABLAS (DISEÑO LIMPIO) --- */
+.contenedor-tabla {
+    background: white;
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--borde-suave);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--texto-principal);
+    background-color: #fafafa;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+td {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+/* --- FORMULARIOS (CONFIGURACIÓN) --- */
+.formulario-caja {
+    background: white;
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--radio-borde);
+    max-width: 800px;
+}
+
+.formulario-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+.formulario-header h3 { font-family: 'Consolas', monospace; font-size: 1.1rem; }
+.formulario-header p { font-size: 0.85rem; color: var(--texto-secundario); margin-top: 0.3rem;}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.grupo-input { display: flex; flex-direction: column; gap: 0.5rem; }
+.grupo-input.completo { grid-column: 1 / -1; }
+
+label { font-size: 0.75rem; font-weight: 700; color: var(--texto-secundario); text-transform: uppercase; letter-spacing: 0.5px; }
+
+input {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--borde-suave);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    color: var(--texto-principal);
+}
+
+input:focus { border-color: var(--bg-sidebar-activo); }
+
+/* --- BOTONES --- */
+.btn-primario {
+    background-color: var(--bg-sidebar-activo);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.btn-primario:hover { background-color: var(--bg-sidebar); }
+/* --- BUSCADOR Y FILTROS --- */
+.barra-busqueda {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.barra-busqueda input {
+    width: 100%;
+    padding-left: 2.5rem; /* Espacio para la lupita */
+}
+
+/* --- PESTAÑAS (TABS) EN ALERTAS --- */
+.tabs {
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--borde-suave);
+    margin-bottom: 1.5rem;
+}
+.tab {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    font-weight: 500;
+}
+.tab.activa {
+    color: var(--bg-sidebar-activo);
+    border-bottom: 2px solid var(--bg-sidebar-activo);
+}
+
+/* --- ESTADOS VACÍOS --- */
+.estado-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: var(--texto-secundario);
+}
+
+/* --- GRILLA DE REPORTES --- */
+.grilla-reportes {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+.panel-reporte {
+    background: white;
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--radio-borde);
+    padding: 1.5rem;
+}
+/* --- BARRA DE FILTROS Y BÚSQUEDA --- */
+.barra-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-busqueda:focus {
+    border-color: #6ee7b7; /* Un borde verde más claro al hacer foco */
+    box-shadow: 0 0 0 2px rgba(110, 231, 183, 0.2);
+}
+
+.filtros-dropdowns {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- MENÚS DESPLEGABLES (DROPDOWNS) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-dropdown {
+    background: white;
+    border: 1px solid var(--borde-suave);
+    color: var(--texto-principal);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--borde-suave);
+    border-radius: 6px;
+    z-index: 10;
+    margin-top: 5px;
+    padding: 0.5rem 0;
+}
+
+.dropdown-content.mostrar {
+    display: block; /* La clase que JS va a añadir para mostrarlo */
+}
+
+.dropdown-content a {
+    color: var(--texto-principal);
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+}
+
+.dropdown-content a.seleccionado {
+    font-weight: 600;
+}
+
+/* --- ESTILOS DEL MODAL --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(2px);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 5% auto; /* Centrado */
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--borde-suave);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-family: 'Consolas', monospace;
+    font-size: 1.1rem;
+}
+
+.cerrar-modal {
+    color: #94a3b8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover { color: #0f172a; }
+
+.modal-body { padding: 1.5rem; }
+/* --- CORRECCIÓN DE FORMULARIOS Y MODALES --- */
+
+/* 1. Obligar a las cajas de texto a ocupar todo el ancho de su columna */
+.grupo-input input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. Liberar al pie del modal para que cruce ambas columnas de lado a lado */
+.modal-footer, .completo {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+}
